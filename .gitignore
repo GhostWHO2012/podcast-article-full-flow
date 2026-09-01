@@ -1,49 +1,26 @@
-# Large source media
-outputs/videos/
-*.mp4
-*.mov
-*.mkv
-*.webm
+# Ignore local source materials and generated outputs.
+outputs/
+公众号内容/
+题纲图文版/
+social-card-enterprise-sales-alpha-test/
 
-# Heavy generated data and captured article assets
+# Ignore local helper experiments outside the published skill package.
+*.js
+*.json
 *.png
 *.jpg
 *.jpeg
 *.webp
-outputs/**/*.json
-outputs/**/*.srt
-outputs/**/*.bilingual.srt
-outputs/**/*.zh.srt
-outputs/**/*.png
-outputs/**/*.jpg
-outputs/**/*.jpeg
-outputs/**/*.webp
-outputs/**/*.zip
-outputs/svg_articles/raw_html/
-outputs/svg_articles/local_html/*.html
-outputs/svg_articles/screenshots/
-公众号内容/
-social-card-enterprise-sales-alpha-test/
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.srt
 
-# Keep generated article markdown packages as examples
-!outputs/podcast_article_full_flow/
-!outputs/podcast_article_full_flow/**
-!outputs/svg_articles/*.md
-!outputs/svg_articles/by_article/**/article.md
-!outputs/subtitles/**/*.播客类型.md
-!outputs/subtitles/**/*.洞见类型.md
-outputs/subtitles/**/播客类型图文版_full/
-outputs/subtitles/**/播客类型图文版_test/
-outputs/subtitles/_*
-outputs/subtitles/**/*.py
-outputs/subtitles/**/*.cmd
-
-# But keep Python bytecode out of example folders
-outputs/**/__pycache__/
-
-# Local/transient files
+# Python/cache/runtime noise.
+__pycache__/
+*.pyc
 *.log
 *_log.txt
-__pycache__/
 .DS_Store
 Thumbs.db
