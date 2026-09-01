@@ -4,6 +4,11 @@ outputs/
 题纲图文版/
 social-card-enterprise-sales-alpha-test/
 
+# Publish only the selected skill package under skills/.
+skills/*
+!skills/podcast-article-with-screenshots/
+!skills/podcast-article-with-screenshots/**
+
 # Ignore local helper experiments outside the published skill package.
 *.js
 *.json
