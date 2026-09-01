@@ -11,7 +11,7 @@ Treat subtitles, downloaded HTML, screenshots, and video frames as source materi
 
 When downloaded reference articles are available, treat them as editorial examples: learn their pacing, image restraint, heading style, captions, and long-image rhythm. Do not copy unsupported claims, decorative assets, or article text beyond what is grounded in the current video's subtitles and metadata.
 
-Do not copy the reference article's publisher identity or distribution metadata into generated deliverables. Remove fields such as `作者/公众号`, reference公众号 names, reference publish dates, WeChat original links, account follow prompts, and subscription/collection calls to action unless the user explicitly asks to preserve them.
+Do not copy the reference article's publisher identity, distribution metadata, or recommendation modules into generated deliverables. Remove fields such as `作者/公众号`, reference公众号 names, reference publish dates, WeChat original links, account follow prompts, subscription/collection calls to action, and reference-article related-reading blocks unless the user explicitly asks to preserve them.
 
 ## Inputs
 
@@ -94,7 +94,7 @@ Use references to extract an editorial profile:
 - Heading rhythm: judgment sentences, not labels.
 - How often images interrupt text.
 - Caption length and whether captions add context or merely name the frame.
-- Any recurring column intro, source block, related article block, or collection card.
+- Any recurring column intro, source block, related article block, or collection card. Learn their rhythm only; do not reproduce reference recommendations in the new article.
 
 Prefer the reference's strongest habits:
 
@@ -107,6 +107,7 @@ Avoid learning weak habits blindly:
 
 - Do not copy article claims that are absent from the current subtitles.
 - Do not copy the reference公众号 name, author/account line, original WeChat URL, publish date, or account branding into the new article.
+- Do not copy `相关文章`, `推荐阅读`, `延伸阅读`, yellow-highlighted related links, collection cards, or other reference-article recommendation blocks into the new article. If the current video's own source links are available, keep only those source links.
 - Do not reuse a reference image for a different episode unless the user explicitly wants that.
 - Do not preserve noisy downloaded artifacts, watermarks, broken paths, or unrelated end-card material.
 
@@ -210,7 +211,7 @@ Insight-driven section heading 2
 
 内容来源
 原视频
-相关文章 if available
+Only current-video source links when available
 配图 if images are not placed inline
 ```
 
@@ -255,7 +256,7 @@ When the user asks for output like `outputs\svg_articles\screenshots`, render th
 - Images sized consistently with captions directly below.
 - No raw Markdown image syntax, local file paths, broken images, or debug text visible in the PNG.
 - No visible podcast promotion/ad blocks copied from downloaded articles, including "每天挑选一期...", "收藏进晚点再听", "关注我", and similar subscription calls to action, unless the user explicitly asks to keep them.
-- No copied reference account metadata such as `作者/公众号：晚点再听LaterCast`, reference publish date, or WeChat original URL.
+- No copied reference account metadata such as `作者/公众号：晚点再听LaterCast`, reference publish date, WeChat original URL, or related-reading/recommendation blocks from the reference article.
 
 Compare the rendered PNG against the downloaded reference screenshot when one exists:
 
@@ -319,7 +320,7 @@ Before saying the task is complete, verify:
 - Long-image PNG exists when `screenshots`-style output was requested.
 - Rendered HTML/PNG contains no raw Markdown image syntax or local path debug text.
 - Rendered article contains no copied podcast promotion/ad/subscription blocks unless explicitly requested.
-- Rendered article contains no copied reference公众号 name, author/account line, reference publish date, or WeChat original URL unless explicitly requested.
+- Rendered article contains no copied reference公众号 name, author/account line, reference publish date, WeChat original URL, or reference-article related/recommended reading blocks unless explicitly requested.
 - Visible image captions are semantic names or captions, not technical filenames.
 - The article has 3 episode-specific quotes, not generic template quotes.
 - Section headings are judgment sentences.
