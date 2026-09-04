@@ -1,0 +1,3 @@
+interface:
+  display_name: "YouTube to WeChat Article"
+  short_description: "Turn video subtitles and screenshots into WeChat articles and long PNGs"
