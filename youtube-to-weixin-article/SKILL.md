@@ -35,7 +35,7 @@ Produce a complete WeChat-style article unless the user asks for only a plan or 
 5. Six to eight thematic sections.
 6. Sparse screenshot placements with one-sentence captions.
 7. `写在最后`.
-8. Source line and original-video link when known.
+8. Source line with the public original-video link when known.
 
 When the user asks for a deliverable that can be posted directly to WeChat, also produce:
 
@@ -49,6 +49,8 @@ For publish-ready long images, video screenshots are required when screenshot fi
 Use paragraph prose by default. Avoid Q&A transcript style, timestamp headings, and bullet-heavy summaries unless the user explicitly requests an outline.
 
 Target article density: common finished drafts are about 4,000 to 5,500 Chinese characters, even when the subtitle file is much longer. Do not scale article length linearly with transcript length. For very long videos, compress harder by keeping only the claims, examples, numbers, and process steps that change the reader's understanding or action.
+
+Public attribution rule: never show local filenames, local paths, downloaded MP4 names, or SRT filenames as the visible source in the article or long-image footer. Local files are evidence for the writer, not reader-facing attribution. Use the original YouTube/video URL from `youtube链接.txt`, `article.md`, metadata, or the user's provided link; include public title, channel, and guest when known. If no public URL is known, write a short source note such as `来源：用户提供的视频和字幕资料` instead of exposing file names.
 
 ## Title Pattern
 
@@ -172,7 +174,7 @@ Long image design rules:
 - Quotes: set apart with subtle background or side rule.
 - Section headings: clear visual breaks, not oversized.
 - Screenshots: include the curated video screenshots in the rendered PNG, full content width, rounded lightly if desired, with a concise caption below.
-- Footer: source title, channel, guest, and original URL if known.
+- Footer: source title, channel, guest, and original URL if known. Do not print local video, subtitle, screenshot, or Markdown filenames in the footer.
 
 Long image layout safety rules:
 
@@ -206,7 +208,7 @@ Before delivering:
 - If a long image was requested, a PNG exists and has been visually checked.
 - Long-image text stays inside the page and inside any quote/card container; font size is readable and not cramped.
 - `写在最后` gives an actionable synthesis rather than a recap.
-- Source title, channel, guest, and URL are included when available.
+- Source title, channel, guest, and URL are included when available; no local file names or paths appear as reader-facing source text.
 - No claim is invented beyond the provided materials.
 
 ## Prompt Skeleton
@@ -226,7 +228,7 @@ When the user wants a reusable prompt or when delegating the work, adapt this:
 - 主持人的问题只作为上下文，不要写成 Q&A。
 - 为适合截图的位置插入图片或标注 [截图建议：...]，说明该截什么、为什么放在这里。
 - 结尾写“写在最后”，给出可执行的总结。
-- 最后列出内容来源和原视频链接。
+- 最后列出公开来源和原视频链接；不要把本地视频文件名、字幕文件名或本地路径写进正文或长图页尾。
 - 如果我要求公众号长图，请同时输出 article.md、images 文件夹和一张可直接预览的竖向长 PNG；只要提供了截图或视频源，长图里必须嵌入视频截图，不能只生成纯文字长图。
 - 长图排版参考已学习样本：默认 1200px 宽、单栏文章、正文不要放进窄卡片；文字必须按真实容器宽度换行，不能出框、裁切或重叠，字体大小要适合公众号阅读。
 - 所有事实必须来自我提供的材料，不要编造。
