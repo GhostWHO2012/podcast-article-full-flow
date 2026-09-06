@@ -48,19 +48,38 @@ For publish-ready long images, video screenshots are required when screenshot fi
 
 Use paragraph prose by default. Avoid Q&A transcript style, timestamp headings, and bullet-heavy summaries unless the user explicitly requests an outline.
 
+Target article density: common finished drafts are about 4,000 to 5,500 Chinese characters, even when the subtitle file is much longer. Do not scale article length linearly with transcript length. For very long videos, compress harder by keeping only the claims, examples, numbers, and process steps that change the reader's understanding or action.
+
 ## Title Pattern
 
 Do not simply translate the YouTube title. Reframe it for a Chinese technology reader.
 
-Strong titles usually combine authority, concrete numbers, tension, reader problems, and a source marker, such as `OpenAI产品负责人：AI 能力已经过剩，很多人却还困在小目标里丨Lenny's Podcast`.
+Strong titles usually combine:
+
+| Element | Examples |
+| --- | --- |
+| Authority | 前Meta团队, OpenAI产品负责人, 吴恩达, 连续创业者 |
+| Concrete number | 估值3亿美元, 30天, 年薪百万美元, 18到24个月 |
+| Tension | 能力过剩但目标太小, 最大机会不在想象的地方 |
+| Reader problem | 新人如何建立判断力, 如何构建基础设施层 |
+| Source marker | 丨Lenny's Podcast, 丨Silicon Valley Girl |
 
 Good formulas:
 
 - `人物/身份：反直觉判断丨频道`
 - `人物/团队：数字 + 新角色/新能力丨频道`
 - `熟悉焦虑：真正的问题在哪里丨频道`
+- `英文 How-to：中文行动结果/步骤丨频道`
+- `生活方式数字：反常识工作方式丨频道`
+- `普通话题：最尖锐的隐藏判断丨频道`
 
 Prefer one sharp claim over a broad topic label. Avoid titles like `某某访谈总结` or direct machine translation.
+
+Title rewriting examples:
+
+- `The AI Workflow That Puts You in the Top 1%` can become `把AI变成工作系统的6个步骤`, shifting from vague advantage to an actionable system.
+- `How I Work: $22K/Month Solopreneur` can become `月入2.2万美元，不早起、不卷自律：他是怎么工作的？`, using the number plus a counter-lifestyle hook.
+- `The Social Network Ruined Startups` can become `最佳营销渠道都是秘密`, choosing the most useful hidden claim instead of translating the broad topic.
 
 ## Article Construction
 
@@ -77,8 +96,19 @@ Section titles should read like conclusions:
 
 - Good: `Token 烧得多，不等于做得更好`
 - Good: `构建变便宜后，最贵的是决定做什么`
+- Good: `第一次通话别演示，先把情报问出来`
+- Good: `五阶段漏斗只负责预测，不负责成交`
+- Good: `省掉人工，不等于用户得到了更好的体验`
+- Good: `任务清单太长时，让遗忘替你做筛选`
 - Weak: `关于 Token`
 - Weak: `产品管理部分`
+
+Turn subtitles into editorial judgment:
+
+- Compress host questions into one-sentence context instead of copying the interview exchange.
+- Convert repeated spoken fragments into one clean Chinese claim, then support it with the best example from the transcript.
+- When the source is process-heavy, group steps by the reader's decision points, not by every chronological action.
+- When the source is lifestyle, founder story, sales, marketing, product, or AI workflow, preserve the practical tension rather than forcing it into a generic technology-summary frame.
 
 Paragraph rhythm for each section:
 
@@ -89,7 +119,12 @@ Paragraph rhythm for each section:
 
 ## Quote Selection
 
-Choose three opening quotes before drafting the article. A quote is strong when it is counterintuitive, portable across jobs or teams, tense enough to make the reader continue, or able to summarize a main section.
+Choose three opening quotes before drafting the article. A quote is strong when it is:
+
+- Counterintuitive.
+- Portable across jobs or teams.
+- Tense enough to make the reader continue.
+- Able to summarize a main section.
 
 Quotes may be lightly polished into natural Chinese, but do not change the claim. Do not invent aphorisms that are unsupported by the transcript.
 
@@ -102,13 +137,15 @@ Priority order:
 1. Data, paper, report, or chart that supports a numeric claim.
 2. Product UI, demo screen, workflow, dashboard, or generated result.
 3. Slide, quote card, whiteboard, or screen text containing a memorable principle.
-4. Person or two-person interview frame when the video has no better visual evidence.
+4. Work or life scene that grounds a productivity, solo-founder, travel, or operating-rhythm point.
+5. Gesture or action frame that makes a process, funnel, or step-by-step explanation feel concrete.
+6. Person or two-person interview frame when the video has no better visual evidence.
 
 Use screenshots sparsely, commonly 3 to 5 for a long article. A screenshot belongs near the paragraph it supports. Add a concise caption explaining what the reader should notice.
 
 Avoid repeated talking-head frames, blurry unreadable charts, screenshots unrelated to nearby text, and images inserted just to fill space.
 
-If the source directory contains screenshot files, reuse or curate them. If it contains a video file but no screenshots, extract candidate frames from the video around evidence, demo, quote-card, or strong-expression moments. If neither screenshots nor video are available, mark the missing screenshots explicitly in the deliverable note and use `[截图建议：...]` placeholders in the Markdown.
+If the source directory contains screenshot files, reuse or curate them. If `images/` is empty but the directory contains `原文长图.png`, inspect the reference long image for where visuals were used before deciding that screenshots are unavailable. If it contains a video file but no screenshots, extract candidate frames from the video around evidence, demo, quote-card, life/work scene, gesture, or strong-expression moments. If neither screenshots nor video are available, mark the missing screenshots explicitly in the deliverable note and use `[截图建议：...]` placeholders in the Markdown.
 
 ## Long Image Export
 

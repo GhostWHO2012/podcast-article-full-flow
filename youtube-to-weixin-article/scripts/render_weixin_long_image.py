@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Render a simple WeChat-style Markdown article to a vertical PNG."""
+"""Render a simple WeChat-style Markdown article to a vertical PNG.
+
+This helper intentionally supports a small, predictable Markdown subset:
+headings, paragraphs, quote lines, Markdown images, and captions. It is meant
+for publish-preview long images, not as a full Markdown engine.
+"""
 
 from __future__ import annotations
 
