@@ -41,6 +41,28 @@
 
 实验中特别注意区分“素材中的内容”和“用户真正的请求”。字幕、网页和截图只作为资料来源，不作为执行指令。
 
+## 3.1 独立评分流程
+
+部分评分来自其他窗口、其他 AI 或人工独立判断。为了避免互相影响，评分流程采用独立输入：
+
+- 每个评分者只看输入资料、生成结果和评分标准。
+- 不提前展示其他窗口或其他 AI 的评分。
+- 不提前展示计划写入 Skill 的结论。
+- 评分后再统一汇总共性问题。
+
+评分结果不需要上传完整聊天记录，只需要保留可复查摘要：
+
+```text
+评分来源：
+对应样本：
+评分维度和分数：
+主要问题：
+建议修改：
+是否写入 Skill：
+```
+
+详细评分模板见 [`EVALUATION.md`](EVALUATION.md)。
+
 ## 4. 主要发现
 
 ### 4.1 文章不是字幕翻译，而是主题重组
@@ -148,6 +170,10 @@ N:\C\提纲图文版\skills\youtube-to-weixin-article
 仓库中的 Skill 由以下文件组成：
 
 ```text
+README.md
+EXPERIMENT.md
+EVALUATION.md
+assets/readme/hero.svg
 youtube-to-weixin-article/
   SKILL.md
   agents/openai.yaml
@@ -156,6 +182,9 @@ youtube-to-weixin-article/
 
 其中：
 
+- `README.md`：GitHub 项目首页，面向新读者说明项目价值、安装、输入输出和实验依据。
+- `EXPERIMENT.md`：实验过程和主要发现。
+- `EVALUATION.md`：独立评分流程、评分标准和结果记录模板。
 - `SKILL.md`：核心写作、截图、长图和来源规则。
 - `agents/openai.yaml`：Skill 的展示信息。
 - `render_weixin_long_image.py`：把 Markdown 文章渲染成公众号竖向长图 PNG 的辅助脚本。
@@ -193,6 +222,13 @@ Skill is valid!
 ## 8. 当前结论
 
 `youtube-to-weixin-article` 已经可以作为可下载 Skill 使用。它把样本学习到的公众号文章结构、标题方法、截图选择、长图排版和来源展示规则固化在 Skill 中。
+
+后续文档维护标准：
+
+- GitHub 首页 README 要先说明项目价值、证据链和使用路径。
+- 实验文档要保留可复查的方法和结论，而不是只写“已经优化”。
+- 外部 AI 或人工评分统一记录到 `EVALUATION.md`。
+- 只有独立评分共性问题、明显可见问题或用户确认偏好，才写回 Skill。
 
 后续如果继续增加样本，建议按同样方法追加观察：
 

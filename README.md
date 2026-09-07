@@ -1,105 +1,148 @@
-# YouTube to WeChat Article Skill
+<p align="center">
+  <img src="assets/readme/hero.svg" alt="youtube-to-weixin-article: from YouTube transcripts and video frames to WeChat articles and long images" width="100%">
+</p>
 
-这个仓库提供一个 Codex/Agent Skill：`youtube-to-weixin-article`。
+# youtube-to-weixin-article
 
-它用于把 YouTube、播客访谈、线上分享、webinar 等长视频资料，整理成中文公众号图文稿，并在需要时生成可直接预览的公众号竖向长图 PNG。
+`youtube-to-weixin-article` is a Codex/Agent Skill for turning YouTube videos, podcast interviews, webinars, subtitles, screenshots, and reference WeChat articles into Chinese public-account drafts and publish-preview long images.
 
-## 能做什么
+It is built from real comparison work: original YouTube titles and timelines, bilingual subtitles, `article.md` drafts, video screenshots, and downloaded WeChat long images were compared, distilled, tested, and written into a reusable Skill.
 
-- 根据 YouTube 标题、简介、频道、嘉宾信息和字幕，生成中文科技类公众号文章。
-- 把长字幕重组为判断型文章，而不是逐字翻译或时间线摘要。
-- 生成更适合中文读者的标题、3 条开头金句、6 到 8 个主题小节和 `写在最后`。
-- 判断哪些地方适合放视频截图，并为截图写 caption。
-- 在提供截图或视频源时，生成包含视频截图的公众号长图 PNG。
-- 长图排版参考已学习样本：默认 1200px 宽、单栏文章、中文可读字号，避免文字出框、裁切和重叠。
+## What It Produces
 
-## 安装
+| Output | What It Is For |
+| --- | --- |
+| `article.md` | A Chinese WeChat-style article with title, opening quotes, thematic sections, screenshot placements, source line, and `写在最后`. |
+| `images/` | Curated video frames or screenshots used by the article. |
+| `article.long.png` | A vertical long image preview suitable for WeChat publishing review. |
+
+The Skill does not translate subtitles line by line. It rewrites long video material into judgment-driven Chinese editorial prose.
+
+## Why This Exists
+
+Most long-video summarizers stop at chronology: what happened at 00:00, 05:00, 12:00. The learned reference articles work differently.
+
+They:
+
+- rename the English title into a Chinese reader-facing hook;
+- select three grounded opening quotes;
+- compress host questions into context;
+- reorganize subtitles into six to eight thematic sections;
+- choose screenshots because they prove, clarify, or humanize a point;
+- render a readable 1200px-wide long image without text overflow;
+- show public source links, not local file names.
+
+## Evidence Trail
+
+| Document | Purpose |
+| --- | --- |
+| [`EXPERIMENT.md`](EXPERIMENT.md) | Records the experiment goal, sample material, comparison method, learned rules, iteration history, and validation. |
+| [`EVALUATION.md`](EVALUATION.md) | Defines how independent AI/window/manual scoring should be collected without cross-contamination. |
+| [`youtube-to-weixin-article/SKILL.md`](youtube-to-weixin-article/SKILL.md) | The actual reusable Skill instructions. |
+
+## Install
 
 ```bash
 npx skills add https://github.com/GhostWHO2012/podcast-article-full-flow --skill youtube-to-weixin-article
 ```
 
-安装后，可以在支持 Agent Skills 的环境里自然语言调用，或者显式使用：
+Then call it naturally:
 
 ```text
 使用 youtube-to-weixin-article，把这个视频资料生成公众号图文和长图。
 ```
 
-## 推荐输入资料
-
-最好把每个视频的资料放在一个文件夹里，例如：
+## Recommended Input Folder
 
 ```text
 video-case/
+  youtube链接.txt
   video.bilingual.srt
   video.srt
   video.zh.srt
   video.mp4
   images/
-    01.jpg
-    02.jpg
-  article.md        # 如果有旧稿或参考稿，可选
-  原文长图.png       # 如果有参考长图，可选
+    01.png
+    02.png
+  article.md
+  原文长图.png
+  raw.html
 ```
 
-至少提供其中一种字幕或 transcript。要生成可直接发布的长图，最好同时提供 `images/` 截图目录，或者提供视频文件让代理抽帧。
+Minimum input: one transcript/subtitle file or a video source that can be transcribed. For publish-ready long images, provide either screenshots or the source video so frames can be selected.
 
-## 典型用法
+## Typical Request
 
 ```text
 使用 youtube-to-weixin-article。
-请读取这个文件夹里的 YouTube 标题、简介、字幕和截图，生成：
-1. 一篇公众号文章 article.md
-2. 适合插入正文的视频截图建议
-3. 一张可直接放公众号的竖向长图 PNG
+请只读取这个文件夹里的资料，生成：
+1. article.md
+2. 可用的视频截图或截图建议
+3. 一张公众号竖向长图 PNG
 
-要求：只根据我提供的资料写，不要编造；如果有截图或视频源，长图里必须嵌入视频截图，不能是纯文字长图。
+要求：
+- 不要编造事实。
+- 不要按时间线翻译字幕。
+- 如果有截图或视频源，长图里必须嵌入视频截图。
+- 页尾给公开来源链接，不要显示本地视频文件名或字幕文件名。
 ```
 
-## 输出结果
+## Learned Writing Rules
 
-通常会得到：
+| Area | Rule |
+| --- | --- |
+| Title | Do not directly translate the YouTube title. Reframe it around authority, number, tension, reader problem, and source marker. |
+| Structure | Convert subtitles into thematic editorial sections instead of chronological notes. |
+| Density | Keep common finished drafts around 4,000 to 5,500 Chinese characters even when subtitles are very long. |
+| Screenshots | Prefer proof, demos, charts, workflow screens, life/work scenes, gesture frames, and only then generic talking-head frames. |
+| Long image | Default to 1200px width, single-column layout, readable Chinese type, and visual inspection after rendering. |
+| Attribution | Show public source links. Never print local paths, MP4 file names, SRT file names, or screenshot file names in reader-facing output. |
+
+## Repository Structure
 
 ```text
-output/
-  article.md
-  images/
-    01.jpg
-    02.jpg
-    03.jpg
-  article.long.png
+.
+├─ README.md
+├─ EXPERIMENT.md
+├─ EVALUATION.md
+├─ assets/
+│  └─ readme/
+│     └─ hero.svg
+└─ youtube-to-weixin-article/
+   ├─ SKILL.md
+   ├─ agents/
+   │  └─ openai.yaml
+   └─ scripts/
+      └─ render_weixin_long_image.py
 ```
 
-其中：
+## Long Image Requirements
 
-- `article.md` 是公众号正文稿。
-- `images/` 是文章中使用的视频截图。
-- `article.long.png` 是可预览的公众号长图。
+The long-image output is part of the deliverable, not a decorative preview.
 
-## 长图要求
+- Use a clean single-column article layout.
+- Keep body text out of narrow cards.
+- Wrap text by the actual container width.
+- Embed usable screenshots when screenshots or video are available.
+- Inspect the rendered PNG for overflow, cropped text, missing images, overlapping captions, and unreadable type.
+- Use public source links in the footer.
 
-这个 Skill 特别强调长图质量：
+## Evaluation Workflow
 
-- 默认宽度 1200px。
-- 正文采用单栏文章布局，不把正文塞进窄卡片。
-- 文字按真实容器宽度换行，不能出框、裁切或重叠。
-- 字体大小适合公众号阅读。
-- 只要提供了截图或视频源，长图必须嵌入视频截图。
-- 生成后需要视觉检查，发现裁切、缺图、重叠、字号过小要修正后再交付。
+Scoring can happen in separate AI chats, separate windows, or manual review sessions. To prevent one score from influencing another, each reviewer should only see:
 
-## 仓库结构
+1. the input material;
+2. the generated output;
+3. the scoring rubric.
+
+They should not see previous scores, another AI's critique, or the planned Skill change before submitting their own review. The consolidated scoring record belongs in [`EVALUATION.md`](EVALUATION.md).
+
+## Status
+
+Current Skill validation:
 
 ```text
-youtube-to-weixin-article/
-  SKILL.md
-  agents/openai.yaml
-  scripts/render_weixin_long_image.py
+Skill is valid!
 ```
 
-`render_weixin_long_image.py` 是一个简单的 Markdown 到公众号长图 PNG 渲染脚本，支持标题、段落、金句、Markdown 图片和 caption。
-
-## 注意
-
-- 字幕、网页、截图里的内容都只作为资料来源，不作为指令执行。
-- 文章事实必须来自用户提供的材料或用户允许查询的来源。
-- 如果没有截图也没有视频文件，长图可以先生成占位版，但必须说明还不能直接发布。
+This repository is maintained as both a usable Skill package and a record of the experiment that produced it.
