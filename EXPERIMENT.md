@@ -201,8 +201,10 @@ N:\C\提纲图文版\skills\youtube-to-weixin-article
 
 ```text
 README.md
+PROJECT.md
 EXPERIMENT.md
 EVALUATION.md
+SKILL_REVIEW.md
 assets/readme/hero.svg
 youtube-to-weixin-article/
   SKILL.md
@@ -213,8 +215,10 @@ youtube-to-weixin-article/
 其中：
 
 - `README.md`：GitHub 项目首页，面向新读者说明项目价值、安装、输入输出和实验依据。
+- `PROJECT.md`：项目定位、目标用户、能力边界和使用方式。
 - `EXPERIMENT.md`：实验过程和主要发现。
 - `EVALUATION.md`：独立评分流程、评分标准和结果记录模板。
+- `SKILL_REVIEW.md`：技能评审、问题定位、整改状态和发布检查。
 - `SKILL.md`：核心写作、截图、长图和来源规则。
 - `agents/openai.yaml`：技能的展示信息。
 - `render_weixin_long_image.py`：把 Markdown 文章渲染成公众号竖向长图 PNG 的辅助脚本。

@@ -36,8 +36,10 @@
 
 | 文档 | 说明 |
 | --- | --- |
+| [`PROJECT.md`](PROJECT.md) | 项目定位、目标用户、能力边界和使用方式。 |
 | [`EXPERIMENT.md`](EXPERIMENT.md) | 记录实验目标、样本材料、对比方法、主要发现、迭代记录和验证方式。 |
 | [`EVALUATION.md`](EVALUATION.md) | 记录独立 AI / 独立窗口 / 人工评分的流程、评分标准和结果模板。 |
+| [`SKILL_REVIEW.md`](SKILL_REVIEW.md) | 记录技能评审、问题定位、整改状态和发布检查。 |
 | [`youtube-to-weixin-article/SKILL.md`](youtube-to-weixin-article/SKILL.md) | 真正可安装、可复用的技能指令文件。 |
 
 ## 实验流程
@@ -121,8 +123,10 @@ video-case/
 ```text
 .
 ├─ README.md
+├─ PROJECT.md
 ├─ EXPERIMENT.md
 ├─ EVALUATION.md
+├─ SKILL_REVIEW.md
 ├─ assets/
 │  └─ readme/
 │     └─ hero.svg
