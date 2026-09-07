@@ -1,90 +1,107 @@
-# Evaluation Workflow
+# 评分流程文档
 
-This file records how generated articles and long images should be scored before the observations are written back into `youtube-to-weixin-article`.
+这个文档用来记录：生成出来的公众号文章和长图，应该如何被独立评分；哪些问题可以写回 `youtube-to-weixin-article` 技能；哪些只是单次偏好，不应该变成通用规则。
 
-## Purpose
+## 1. 目标
 
-The evaluation workflow prevents the Skill from being changed based on one impression, one chat window, or one model's preference. Reviews can come from independent AI windows or manual reviewers, but the scoring record should make the process auditable.
+评分流程的目的，是避免技能因为一次主观印象、一个聊天窗口或一个模型偏好而被随意修改。
 
-## Independence Rule
+评分可以来自：
 
-Each reviewer should score independently.
+- 独立 AI 对话；
+- 独立浏览器窗口；
+- 人工评审；
+- 多轮生成后的人工汇总。
 
-Give each reviewer only:
+但所有评分都需要留下可复查记录。
 
-- the original input material or a clear link to it;
-- the generated article/long image being evaluated;
-- the rubric below.
+## 2. 独立评分原则
 
-Do not show a reviewer previous scores, another AI's critique, or the planned Skill change before they submit their own judgment.
+每个评分者都应该独立评分。
 
-## Rubric
+每次评分只给评分者三类资料：
 
-Use a 1-5 score for each dimension.
+- 原始输入材料，或能打开的资料链接；
+- 本轮生成的文章或长图；
+- 本文档里的评分标准。
 
-| Dimension | 1 | 3 | 5 |
+不要提前给评分者看：
+
+- 其他 AI 的评分；
+- 其他窗口的评语；
+- 上一轮修改建议；
+- 准备写回技能的结论。
+
+这样可以减少互相暗示，让评分更接近真实独立判断。
+
+## 3. 评分标准
+
+每个维度按 1 到 5 分评分。
+
+| 维度 | 1 分 | 3 分 | 5 分 |
 | --- | --- | --- | --- |
-| Title | Direct translation or vague topic | Has a hook but weak tension | Strong Chinese reader-facing hook with authority, number, or tension |
-| Source fidelity | Unsupported claims | Mostly grounded with a few vague areas | Claims, quotes, numbers, and examples are traceable to supplied materials |
-| Article structure | Chronological summary or Q&A | Some thematic grouping | Clear judgment-driven sections with a readable editorial arc |
-| Quote selection | Generic or invented | Useful but not central | Three grounded quotes that frame the article |
-| Screenshot choice | Decorative or missing | Some useful placements | Screenshots prove, clarify, or humanize nearby points |
-| Long-image layout | Text overflow, cramped type, missing images | Readable but uneven | 1200px-style single-column layout, readable type, no overflow, images embedded |
-| Attribution | Local file names or unclear source | Source present but incomplete | Public title/channel/guest/link shown; no local filenames |
+| 标题 | 直译或泛泛概括 | 有钩子，但张力不足 | 有明确中文读者钩子，包含身份、数字或反差 |
+| 来源忠实度 | 有明显编造或无法追溯 | 大体可信，但有少量模糊表达 | 观点、金句、数字和案例都能追溯到材料 |
+| 文章结构 | 时间线摘要或问答稿 | 有部分主题重组 | 小节清晰，像中文公众号判断型文章 |
+| 金句选择 | 泛泛而谈或疑似编造 | 有用，但不能支撑全文 | 三条金句都来自材料，能框住文章主线 |
+| 截图选择 | 缺图或只是装饰 | 有些截图有用 | 截图能证明、解释或增强附近段落 |
+| 长图排版 | 文字出框、字号太小、缺图 | 可读但不够稳定 | 1200px 单栏、字号合适、不出框、截图嵌入完整 |
+| 来源展示 | 显示本地文件名或来源不清 | 有来源但不完整 | 显示公开标题、频道、嘉宾和链接，不暴露本地文件名 |
 
-## Review Record Template
+## 4. 评分记录模板
 
-Copy one block per independent review.
+每个独立评分复制一份下面的模板：
 
 ```text
-Review ID:
-Reviewer type: AI / human
-Reviewer name or tool:
-Review date:
-Sample/video:
-Input shown to reviewer:
-Output reviewed:
+评分编号：
+评分者类型：AI / 人工
+评分者名称或工具：
+评分日期：
+对应样本或视频：
+评分者看到的输入：
+评分者看到的输出：
 
-Scores:
-- Title:
-- Source fidelity:
-- Article structure:
-- Quote selection:
-- Screenshot choice:
-- Long-image layout:
-- Attribution:
+分数：
+- 标题：
+- 来源忠实度：
+- 文章结构：
+- 金句选择：
+- 截图选择：
+- 长图排版：
+- 来源展示：
 
-Main praise:
-Main problems:
-Suggested Skill change:
-Should write back into Skill: yes / no / needs more evidence
+主要优点：
+主要问题：
+建议写入技能的修改：
+是否写回技能：是 / 否 / 需要更多证据
 ```
 
-## Consolidation Rule
+## 5. 汇总规则
 
-Only write a finding into the Skill when one of these is true:
+只有满足以下任一条件，才建议把问题写回技能：
 
-- multiple independent reviewers identify the same issue;
-- the issue is directly visible in the output, such as text overflow, missing screenshots, or local filenames in the source line;
-- the user explicitly chooses a preference after seeing the trade-off.
+- 多个独立评分者指出同一个问题；
+- 问题可以直接从输出中看到，比如文字出框、缺少截图、页尾显示本地文件名；
+- 用户看过取舍后明确选择某个偏好。
 
-Do not write back isolated style preferences as universal rules.
+不要把单个评分者的风格偏好直接写成通用规则。
 
-## Current Verified Issues
+## 6. 当前已验证问题
 
-| Issue | Evidence | Status |
+| 问题 | 证据 | 状态 |
 | --- | --- | --- |
-| Long image text can overflow narrow containers | Visual check from generated long image | Written into Skill |
-| Long image can omit video screenshots | Generated long image had no screenshot despite source material | Written into Skill |
-| Footer can expose local MP4/SRT filenames | Generated source line displayed local file names | Written into Skill |
-| Subtitle length can tempt overlong articles | Comparison across learned samples | Written into Skill |
+| 长图窄容器里可能文字出框 | 生成长图的视觉检查截图 | 已写入技能 |
+| 长图可能缺少视频截图 | 有视频素材但生成结果没有截图 | 已写入技能 |
+| 页尾可能暴露本地 MP4 / SRT 文件名 | 生成结果显示了本地文件名 | 已写入技能 |
+| 字幕太长时文章容易过长 | 多个学习样本对比 | 已写入技能 |
 
-## Next Data To Add
+## 7. 后续要补充的数据
 
-When more external scoring is available, add:
+后续如果继续让其他 AI 或人工评分，建议补充：
 
-- reviewer identity or model type;
-- sample/video tested;
-- scores per rubric dimension;
-- exact issue observed;
-- whether the issue was written into Skill.
+- 评分者类型；
+- 对应样本或视频；
+- 每个维度的分数；
+- 具体发现的问题；
+- 是否最终写回技能；
+- 如果没有写回，原因是什么。

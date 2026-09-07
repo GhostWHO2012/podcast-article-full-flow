@@ -1,58 +1,58 @@
 <p align="center">
-  <img src="assets/readme/hero.svg" alt="youtube-to-weixin-article: from YouTube transcripts and video frames to WeChat articles and long images" width="100%">
+  <img src="assets/readme/hero.svg" alt="youtube-to-weixin-article：把视频字幕和截图变成公众号文章与长图" width="100%">
 </p>
 
 # youtube-to-weixin-article
 
-`youtube-to-weixin-article` is a Codex/Agent Skill for turning YouTube videos, podcast interviews, webinars, subtitles, screenshots, and reference WeChat articles into Chinese public-account drafts and publish-preview long images.
+`youtube-to-weixin-article` 是一个 Codex 智能体技能，用来把 YouTube 视频、播客访谈、线上分享、字幕、截图和参考公众号文章，整理成中文公众号图文稿，并在需要时生成公众号竖向长图预览。
 
-It is built from real comparison work: original YouTube titles and timelines, bilingual subtitles, `article.md` drafts, video screenshots, and downloaded WeChat long images were compared, distilled, tested, and written into a reusable Skill.
+这个项目不是简单提示词集合，而是基于真实样本对比沉淀出来的可复用技能：我们对照了 YouTube 原标题、时间轴、中英文字幕、`article.md`、视频截图和公众号原文长图，把稳定有效的写作、截图、排版和来源展示规则写进技能文件。
 
-## What It Produces
+## 这个项目能做什么
 
-| Output | What It Is For |
+| 输出 | 用途 |
 | --- | --- |
-| `article.md` | A Chinese WeChat-style article with title, opening quotes, thematic sections, screenshot placements, source line, and `写在最后`. |
-| `images/` | Curated video frames or screenshots used by the article. |
-| `article.long.png` | A vertical long image preview suitable for WeChat publishing review. |
+| `article.md` | 公众号正文稿，包含标题、三条金句、主题小节、截图位置、来源和 `写在最后`。 |
+| `images/` | 文章中使用的视频截图或精选画面。 |
+| `article.long.png` | 可用于公众号发布前检查的竖向长图预览。 |
 
-The Skill does not translate subtitles line by line. It rewrites long video material into judgment-driven Chinese editorial prose.
+这个技能的重点不是逐句翻译字幕，而是把长视频资料重组为适合中文读者阅读的判断型文章。
 
-## Why This Exists
+## 为什么需要它
 
-Most long-video summarizers stop at chronology: what happened at 00:00, 05:00, 12:00. The learned reference articles work differently.
+很多长视频总结会停留在时间线：00:00 讲了什么，05:00 讲了什么，12:00 讲了什么。参考公众号文章不是这样写的。
 
-They:
+它们通常会：
 
-- rename the English title into a Chinese reader-facing hook;
-- select three grounded opening quotes;
-- compress host questions into context;
-- reorganize subtitles into six to eight thematic sections;
-- choose screenshots because they prove, clarify, or humanize a point;
-- render a readable 1200px-wide long image without text overflow;
-- show public source links, not local file names.
+- 把英文标题重新命名成中文读者更想点开的标题；
+- 从字幕里选出三条有张力、能支撑全文的金句；
+- 把主持人的问题压缩成上下文；
+- 把字幕内容重组为六到八个主题小节；
+- 在真正需要解释、证明或增强现场感的位置放截图；
+- 生成 1200px 宽、单栏、字号合适、不出框的公众号长图；
+- 在页尾展示公开来源链接，而不是本地文件名。
 
-## Evidence Trail
+## 证据链
 
-| Document | Purpose |
+| 文档 | 说明 |
 | --- | --- |
-| [`EXPERIMENT.md`](EXPERIMENT.md) | Records the experiment goal, sample material, comparison method, learned rules, iteration history, and validation. |
-| [`EVALUATION.md`](EVALUATION.md) | Defines how independent AI/window/manual scoring should be collected without cross-contamination. |
-| [`youtube-to-weixin-article/SKILL.md`](youtube-to-weixin-article/SKILL.md) | The actual reusable Skill instructions. |
+| [`EXPERIMENT.md`](EXPERIMENT.md) | 记录实验目标、样本材料、对比方法、主要发现、迭代记录和验证方式。 |
+| [`EVALUATION.md`](EVALUATION.md) | 记录独立 AI / 独立窗口 / 人工评分的流程、评分标准和结果模板。 |
+| [`youtube-to-weixin-article/SKILL.md`](youtube-to-weixin-article/SKILL.md) | 真正可安装、可复用的技能指令文件。 |
 
-## Install
+## 安装方式
 
 ```bash
 npx skills add https://github.com/GhostWHO2012/podcast-article-full-flow --skill youtube-to-weixin-article
 ```
 
-Then call it naturally:
+安装后可以这样调用：
 
 ```text
 使用 youtube-to-weixin-article，把这个视频资料生成公众号图文和长图。
 ```
 
-## Recommended Input Folder
+## 推荐输入目录
 
 ```text
 video-case/
@@ -69,9 +69,9 @@ video-case/
   raw.html
 ```
 
-Minimum input: one transcript/subtitle file or a video source that can be transcribed. For publish-ready long images, provide either screenshots or the source video so frames can be selected.
+最少需要提供一种字幕或转写文本。若要生成可直接检查的公众号长图，最好同时提供截图目录，或者提供视频文件让智能体从视频中抽帧。
 
-## Typical Request
+## 典型请求
 
 ```text
 使用 youtube-to-weixin-article。
@@ -87,18 +87,18 @@ Minimum input: one transcript/subtitle file or a video source that can be transc
 - 页尾给公开来源链接，不要显示本地视频文件名或字幕文件名。
 ```
 
-## Learned Writing Rules
+## 已沉淀的写作规则
 
-| Area | Rule |
+| 模块 | 规则 |
 | --- | --- |
-| Title | Do not directly translate the YouTube title. Reframe it around authority, number, tension, reader problem, and source marker. |
-| Structure | Convert subtitles into thematic editorial sections instead of chronological notes. |
-| Density | Keep common finished drafts around 4,000 to 5,500 Chinese characters even when subtitles are very long. |
-| Screenshots | Prefer proof, demos, charts, workflow screens, life/work scenes, gesture frames, and only then generic talking-head frames. |
-| Long image | Default to 1200px width, single-column layout, readable Chinese type, and visual inspection after rendering. |
-| Attribution | Show public source links. Never print local paths, MP4 file names, SRT file names, or screenshot file names in reader-facing output. |
+| 标题 | 不直译 YouTube 标题，而是围绕人物身份、数字、反差、读者问题和频道来源重新命名。 |
+| 结构 | 不按时间线总结，把字幕重组为主题小节和中文判断句。 |
+| 篇幅 | 常规成稿控制在约 4000 到 5500 中文字，即使字幕很长也要强压缩。 |
+| 截图 | 优先选择数据、演示、工作流、生活/工作现场、动作手势帧，再考虑普通人物访谈帧。 |
+| 长图 | 默认 1200px 宽，单栏排版，中文字号可读，渲染后必须人工检查。 |
+| 来源 | 展示公开来源链接，不在正文或长图页尾显示本地路径、视频文件名、字幕文件名或截图文件名。 |
 
-## Repository Structure
+## 仓库结构
 
 ```text
 .
@@ -116,33 +116,29 @@ Minimum input: one transcript/subtitle file or a video source that can be transc
       └─ render_weixin_long_image.py
 ```
 
-## Long Image Requirements
+## 长图要求
 
-The long-image output is part of the deliverable, not a decorative preview.
+长图是交付物的一部分，不只是装饰预览。
 
-- Use a clean single-column article layout.
-- Keep body text out of narrow cards.
-- Wrap text by the actual container width.
-- Embed usable screenshots when screenshots or video are available.
-- Inspect the rendered PNG for overflow, cropped text, missing images, overlapping captions, and unreadable type.
-- Use public source links in the footer.
+- 使用干净的单栏文章布局。
+- 正文不要放进窄卡片。
+- 按真实容器宽度换行。
+- 如果有截图或视频源，必须嵌入可用截图。
+- 渲染后检查是否有文字出框、裁切、缺图、字幕/图片重叠、字号过小。
+- 页尾使用公开来源链接。
 
-## Evaluation Workflow
+## 评分流程
 
-Scoring can happen in separate AI chats, separate windows, or manual review sessions. To prevent one score from influencing another, each reviewer should only see:
+评分可以来自独立 AI 对话、独立窗口或人工评审。为了避免互相影响，每个评分者只应该看到：
 
-1. the input material;
-2. the generated output;
-3. the scoring rubric.
+1. 输入资料；
+2. 生成结果；
+3. 评分标准。
 
-They should not see previous scores, another AI's critique, or the planned Skill change before submitting their own review. The consolidated scoring record belongs in [`EVALUATION.md`](EVALUATION.md).
+评分者不应该提前看到其他评分、其他 AI 的评语或计划写回技能文件的结论。汇总后的评分记录写入 [`EVALUATION.md`](EVALUATION.md)。
 
-## Status
+## 当前状态
 
-Current Skill validation:
+最近一次技能校验结果：通过。
 
-```text
-Skill is valid!
-```
-
-This repository is maintained as both a usable Skill package and a record of the experiment that produced it.
+这个仓库同时承担两个作用：一个可安装的技能包，以及一份记录该技能如何被实验、评分和迭代出来的项目文档。
