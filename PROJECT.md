@@ -59,6 +59,8 @@
 | `EXPERIMENT.md` | 实验设计、样本来源、对比方法和主要发现。 |
 | `EVALUATION.md` | 独立评分流程、评分标准和评分记录。 |
 | `SKILL_REVIEW.md` | 技能评审、问题定位、整改和发布记录。 |
+| `references/` | 已确认可复用的标题、结构、截图、长图和项目包装规则。 |
+| `evals/` | 每一轮独立评分、对照实验或评估摘要。 |
 | `youtube-to-weixin-article/SKILL.md` | 可安装的技能主体。 |
 | `youtube-to-weixin-article/scripts/render_weixin_long_image.py` | 长图渲染辅助脚本。 |
 
@@ -91,3 +93,13 @@ npx skills add https://github.com/GhostWHO2012/podcast-article-full-flow --skill
 7. 更新文档并上传 GitHub。
 
 这样仓库不仅能展示结果，也能说明结果是如何被验证和改进的。
+
+## 8. 后续项目包装标准
+
+之后维护同类 Skill 项目时，按 [`references/project-packaging-standard.md`](references/project-packaging-standard.md) 执行：
+
+- README 先讲清项目价值、交付物、安装方式、证据链和边界；
+- `references/` 只放已经确认的通用规则；
+- `evals/` 记录独立评分和测试结果；
+- 没有做过的自动化测试、独立评估或效果对照不写成既成事实；
+- 原始公众号长图、视频、字幕和本地样本不默认上传公开仓库。

@@ -91,6 +91,8 @@
 
 详细评分模板见 [`EVALUATION.md`](EVALUATION.md)。
 
+独立评分的单次记录保存在 [`evals/`](evals/)，已经确认的通用规则再整理到 [`references/`](references/)。
+
 评分反馈不会自动写入技能。主对话只负责汇总问题、归纳优化建议，并标记“待用户确认”。用户确认后，才将对应规则写入 `youtube-to-weixin-article/SKILL.md`，并在 GitHub 提交记录中保留本次迭代。
 
 ## 4. 主要发现
@@ -205,6 +207,8 @@ PROJECT.md
 EXPERIMENT.md
 EVALUATION.md
 SKILL_REVIEW.md
+references/
+evals/
 assets/readme/hero.svg
 youtube-to-weixin-article/
   SKILL.md
@@ -219,6 +223,8 @@ youtube-to-weixin-article/
 - `EXPERIMENT.md`：实验过程和主要发现。
 - `EVALUATION.md`：独立评分流程、评分标准和结果记录模板。
 - `SKILL_REVIEW.md`：技能评审、问题定位、整改状态和发布检查。
+- `references/`：已确认可复用的标题、结构、截图、长图和项目包装规则。
+- `evals/`：独立评分、对照实验或评估摘要记录。
 - `SKILL.md`：核心写作、截图、长图和来源规则。
 - `agents/openai.yaml`：技能的展示信息。
 - `render_weixin_long_image.py`：把 Markdown 文章渲染成公众号竖向长图 PNG 的辅助脚本。
