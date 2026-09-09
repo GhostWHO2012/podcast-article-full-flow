@@ -40,17 +40,9 @@ Skill 会从标题、简介、字幕、章节、视频截图和补充资料中�
 
 当输入中存在截图或视频源时，长图会嵌入可用视频截图，并在导出后检查文字出框、图片缺失、字号过小、图文重叠和来源展示问题。长图目标是进入公众号编辑前的可检查成品。
 
-## 晚点对照样本
+## 晚点原长图入口
 
-第二批学习样本位于本地目录 `N:\C\提纲图文版\outputs\weixin_new2\videos`，每个文件夹中的 `article.md` 和 `原文长图.png` 均按晚点原内容处理，用于建立文字稿和长图的对照关系。公开仓库只记录样本标题和方法，不上传晚点原文全文、原图或视频素材。
-
-| 样本 | 对照内容 |
-| --- | --- |
-| `01_把AI变成工作系统的6个步骤丨Silicon Valley Girl` | 晚点原文、原文长图、同源视频与字幕 |
-| `02_YC前负责人：如何找到 to C 的创业点子丨Dalton + Michael` | 晚点原文、原文长图、同源视频与字幕 |
-| `03_Crazy Egg创始人：最佳营销渠道都是秘密丨Delphi` | 晚点原文、原文长图、同源视频与字幕 |
-| `04_月入2.2万美元，不早起、不卷自律：他是怎么工作的？丨Starter Story` | 晚点原文、原文长图、同源视频与字幕 |
-| `05_JJellyfish 联合创始人：如何一步步拿下10万美元以上的企业级交易丨Le` | 晚点原文、原文长图、同源视频与字幕 |
+晚点原长图不直接铺在首页。需要查看学习来源时，进入单独页面：[晚点原长图对照页](references/wandian-original-long-images.md)。
 
 ## 使用方式
 
@@ -99,6 +91,8 @@ video-case/
 ├─ references/
 │  ├─ README.md
 │  ├─ weixin-article-rules.md
+│  ├─ wandian-original-long-images.md
+│  ├─ wandian-learning-sources.md
 │  └─ project-packaging-standard.md
 ├─ evals/
 │  ├─ README.md
@@ -124,6 +118,7 @@ video-case/
 | [`SKILL_REVIEW.md`](SKILL_REVIEW.md) | 技能评审、问题定位、整改状态和发布检查。 |
 | [`references/weixin-article-rules.md`](references/weixin-article-rules.md) | 从样本中沉淀出的标题、结构、截图、长图和来源规则。 |
 | [`references/wandian-learning-sources.md`](references/wandian-learning-sources.md) | 晚点学习样本来源说明和对照关系。 |
+| [`references/wandian-original-long-images.md`](references/wandian-original-long-images.md) | 晚点原长图对照入口。 |
 | [`evals/2026-09-07-long-image-independent-review.md`](evals/2026-09-07-long-image-independent-review.md) | 独立窗口长图重评记录。 |
 | [`youtube-to-weixin-article/SKILL.md`](youtube-to-weixin-article/SKILL.md) | 真正可安装、可复用的 Skill 指令。 |
 

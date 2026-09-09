@@ -10,6 +10,7 @@
 | --- | --- |
 | `weixin-article-rules.md` | 标题、正文结构、截图、长图和来源展示规则。 |
 | `wandian-learning-sources.md` | 晚点学习样本来源说明和对照关系。 |
+| `wandian-original-long-images.md` | 晚点原长图对照入口。 |
 | `project-packaging-standard.md` | 之后维护同类 Skill 项目时采用的 GitHub 包装标准。 |
 
 ## 使用原则
