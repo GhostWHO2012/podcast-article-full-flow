@@ -8,6 +8,22 @@
 
 项目的核心交付只有一个：根据用户提供的资料，生成可用于公众号编辑流程的文章与长图。实验、评分和整改流程作为项目文档保留，用来说明这个 Skill 如何通过晚点原文、晚点原文长图、同源视频资料、独立生成结果和独立评分逐步沉淀；这些流程不封装成普通用户调用时的额外功能。
 
+## 立即使用
+
+可用 Skill：[youtube-to-weixin-article/SKILL.md](youtube-to-weixin-article/SKILL.md)
+
+```bash
+npx skills add https://github.com/GhostWHO2012/podcast-article-full-flow --skill youtube-to-weixin-article
+```
+
+安装后可以这样调用：
+
+```text
+使用 youtube-to-weixin-article。
+请只读取我指定的视频资料文件夹，生成公众号深度长文、截图建议和公众号竖向长图。
+要求事实只来自我提供的材料；有截图或视频源时长图必须包含视频截图；页尾给公开来源链接，不要显示本地文件名。
+```
+
 ## 你会得到什么
 
 | 交付物 | 说明 |
@@ -37,26 +53,6 @@ Skill 会从标题、简介、字幕、章节、视频截图和补充资料中�
 ### 可发布长图的视觉交付
 
 当输入中存在截图或视频源时，长图会嵌入可用视频截图，并在导出后检查文字出框、图片缺失、字号过小、图文重叠和来源展示问题。长图目标是进入公众号编辑前的可检查成品。
-
-## 晚点原长图入口
-
-晚点原长图不直接铺在首页。需要查看学习来源时，进入单独页面：[晚点原长图对照页](references/wandian-original-long-images.md)。
-
-## 使用方式
-
-安装 Skill：
-
-```bash
-npx skills add https://github.com/GhostWHO2012/podcast-article-full-flow --skill youtube-to-weixin-article
-```
-
-安装后可以这样调用：
-
-```text
-使用 youtube-to-weixin-article。
-请只读取我指定的视频资料文件夹，生成公众号深度长文、截图建议和公众号竖向长图。
-要求事实只来自我提供的材料；有截图或视频源时长图必须包含视频截图；页尾给公开来源链接，不要显示本地文件名。
-```
 
 ## 推荐输入目录
 
@@ -111,14 +107,13 @@ video-case/
 | 文件 | 作用 |
 | --- | --- |
 | [`PROJECT.md`](PROJECT.md) | 项目定位、目标用户、能力边界和使用方式。 |
+| [`youtube-to-weixin-article/SKILL.md`](youtube-to-weixin-article/SKILL.md) | 真正可安装、可复用的 Skill 指令。 |
 | [`EXPERIMENT.md`](EXPERIMENT.md) | 实验设计、晚点原文长图对照、样本材料、主要发现和迭代记录。 |
 | [`EVALUATION.md`](EVALUATION.md) | 独立评分流程、评分标准和汇总规则。 |
 | [`SKILL_REVIEW.md`](SKILL_REVIEW.md) | 技能评审、问题定位、整改状态和发布检查。 |
 | [`references/weixin-article-rules.md`](references/weixin-article-rules.md) | 从样本中沉淀出的标题、结构、截图、长图和来源规则。 |
 | [`references/wandian-learning-sources.md`](references/wandian-learning-sources.md) | 晚点学习样本来源说明和对照关系。 |
-| [`references/wandian-original-long-images.md`](references/wandian-original-long-images.md) | 晚点原长图对照入口。 |
 | [`evals/2026-09-07-long-image-independent-review.md`](evals/2026-09-07-long-image-independent-review.md) | 独立窗口长图重评记录。 |
-| [`youtube-to-weixin-article/SKILL.md`](youtube-to-weixin-article/SKILL.md) | 真正可安装、可复用的 Skill 指令。 |
 
 ## 实验流程
 
@@ -157,6 +152,10 @@ video-case/
 - 不把评分窗口的单次审美偏好直接写入 Skill。
 - 晚点原长图只在单独对照页以小尺寸缩略图展示；字幕、视频文件和本地受限素材不进入公开仓库。
 - 不把“静态校验通过”表述为“效果已经被完全证明”。
+
+## 学习来源对照
+
+晚点原长图不直接铺在首页。需要查看学习来源时，进入单独页面：[晚点原长图对照页](references/wandian-original-long-images.md)。
 
 ## 当前状态
 
