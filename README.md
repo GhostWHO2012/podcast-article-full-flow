@@ -114,6 +114,7 @@ video-case/
 | [`references/weixin-article-rules.md`](references/weixin-article-rules.md) | 从样本中沉淀出的标题、结构、截图、长图和来源规则。 |
 | [`references/wandian-learning-sources.md`](references/wandian-learning-sources.md) | 晚点学习样本来源说明和对照关系。 |
 | [`evals/2026-09-07-long-image-independent-review.md`](evals/2026-09-07-long-image-independent-review.md) | 独立窗口长图重评记录。 |
+| [`evals/long-image-test-results/README.md`](evals/long-image-test-results/README.md) | 内容生成测试版 5 个测试组长图结果、文章稿和预览入口。 |
 
 ## 实验流程
 
