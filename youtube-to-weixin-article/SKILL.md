@@ -31,7 +31,7 @@ Produce a complete WeChat-style article unless the user asks for only a plan or 
 1. Title.
 2. Optional account intro line if the user wants a finished public-account draft.
 3. Three strong quote lines.
-4. Two short opening paragraphs: person/background plus the core question.
+4. Two short opening paragraphs that begin from a concrete scene, conflict, or user/business problem, then connect it to the person/background and core question.
 5. Six to eight thematic sections.
 6. Sparse screenshot placements with one-sentence captions.
 7. `写在最后`.
@@ -112,12 +112,20 @@ Turn subtitles into editorial judgment:
 - When the source is process-heavy, group steps by the reader's decision points, not by every chronological action.
 - When the source is lifestyle, founder story, sales, marketing, product, or AI workflow, preserve the practical tension rather than forcing it into a generic technology-summary frame.
 
+Opening pattern for finished public-account drafts:
+
+1. If appropriate for the user's requested format, start with a short account intro line.
+2. Place three grounded quote lines before the main body.
+3. Do not open with a video summary. Start the first body paragraph from a concrete scene, conflict, or pressure point, then broaden to the episode's central question.
+
 Paragraph rhythm for each section:
 
 1. State the phenomenon or problem.
 2. Give the guest's core judgment, with a short quote when useful.
 3. Ground it in the video's example, number, demo, or story.
 4. Explain why it matters to the reader.
+
+Keep specific story details when they carry insight. Strong drafts should preserve concrete frictions such as getting stuck, feeling uneasy, waiting through a bad experience, making a wrong judgment, facing cost or latency limits, or hearing real user/customer feedback. Use those details to support the section's judgment instead of flattening them into abstract advice.
 
 ## Quote Selection
 
@@ -143,7 +151,7 @@ Priority order:
 5. Gesture or action frame that makes a process, funnel, or step-by-step explanation feel concrete.
 6. Person or two-person interview frame when the video has no better visual evidence.
 
-Use screenshots sparsely, commonly 3 to 5 for a long article. A screenshot belongs near the paragraph it supports. Add a concise caption explaining what the reader should notice.
+Use screenshots sparsely, commonly 3 to 5 for a long article. A screenshot belongs near the paragraph it supports. Add a concise caption explaining what the reader should notice. Do not distribute screenshots evenly just to make the article look illustrated; place them where they prove or clarify a concrete scene, product surface, interface, workflow, real user feedback, or other evidence in the adjacent text.
 
 Avoid repeated talking-head frames, blurry unreadable charts, screenshots unrelated to nearby text, and images inserted just to fill space.
 
@@ -221,12 +229,12 @@ When the user wants a reusable prompt or when delegating the work, adapt this:
 要求：
 - 标题使用“人物/身份 + 核心判断 + 频道”的结构，不要直译英文标题。
 - 开头先给 3 条金句，必须来自或忠实改写自字幕。
-- 导入用 2 段交代人物背景和本期核心问题。
+- 导入不要直接总结视频；先从一个具体场景、冲突或用户/业务问题写起，再交代人物背景和本期核心问题。
 - 正文不要按时间线总结，重组为 6 到 8 个主题小节。
 - 每个小节标题要像一个独立判断。
-- 每节 2 到 4 段，优先保留数字、案例、比喻、产品演示、方法论。
+- 每节 2 到 4 段，优先保留数字、案例、比喻、产品演示、方法论，以及卡住、不安、失败、等待、误判、成本限制、真实用户反馈等具体故事细节。
 - 主持人的问题只作为上下文，不要写成 Q&A。
-- 为适合截图的位置插入图片或标注 [截图建议：...]，说明该截什么、为什么放在这里。
+- 为适合截图的位置插入图片或标注 [截图建议：...]，说明该截什么、为什么放在这里；截图必须贴近具体段落，优先证明场景、产品、界面、工作流或真实反馈，不要平均插图。
 - 结尾写“写在最后”，给出可执行的总结。
 - 最后列出公开来源和原视频链接；不要把本地视频文件名、字幕文件名或本地路径写进正文或长图页尾。
 - 如果我要求公众号长图，请同时输出 article.md、images 文件夹和一张可直接预览的竖向长 PNG；只要提供了截图或视频源，长图里必须嵌入视频截图，不能只生成纯文字长图。
