@@ -29,13 +29,12 @@ If the user provides a directory, inspect only the user-authorized directory and
 Produce a complete WeChat-style article unless the user asks for only a plan or excerpt:
 
 1. Title.
-2. Optional account intro line if the user wants a finished public-account draft.
-3. Three strong quote lines.
-4. Two short opening paragraphs that begin from a concrete scene, conflict, or user/business problem, then connect it to the person/background and core question.
-5. Six to eight thematic sections.
-6. Sparse screenshot placements with one-sentence captions.
-7. `写在最后`.
-8. Source line with the public original-video link when known.
+2. Three strong quote lines.
+3. Two short opening paragraphs that begin from a concrete scene, conflict, or user/business problem, then connect it to the person/background and core question.
+4. Six to eight thematic sections.
+5. Sparse screenshot placements with one-sentence captions.
+6. `写在最后`.
+7. Source line with the public original-video link when known.
 
 When the user asks for a deliverable that can be posted directly to WeChat, also produce:
 
@@ -114,8 +113,8 @@ Turn subtitles into editorial judgment:
 
 Opening pattern for finished public-account drafts:
 
-1. If appropriate for the user's requested format, start with a short account intro line.
-2. Place three grounded quote lines before the main body.
+1. Place three grounded quote lines before the main body.
+2. Do not use an account intro line before the quotes unless the user explicitly asks for one.
 3. Do not open with a video summary. Start the first body paragraph from a concrete scene, conflict, or pressure point, then broaden to the episode's central question.
 
 Paragraph rhythm for each section:
