@@ -29,4 +29,4 @@
 | 文件 | 说明 |
 | --- | --- |
 | `2026-09-07-long-image-independent-review.md` | 内容生成测试版 5 张公众号长图的独立窗口重评。 |
-| `long-image-test-results/README.md` | 内容生成测试版 5 个测试组长图结果、文章稿和顶部预览入口。 |
+| `long-image-test-results/README.md` | 测试组长图结果、文章稿和顶部预览入口；当前包含 6 个测试结果。 |

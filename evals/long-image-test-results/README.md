@@ -6,7 +6,7 @@
 
 ## 记录范围
 
-本批记录来自“内容生成测试版”5 个独立测试样本。每个样本保留：
+本页当前记录 6 个测试样本。每个样本保留：
 
 - `article.md`：测试组生成的文章稿；
 - `article.long.png`：测试组生成的完整公众号长图；
@@ -25,6 +25,12 @@
 | 3 | ChatGPT Work / GPT-5.6 新手向 | 84 | [article.long.png](04-chatgpt-work-gpt56-beginner/article.long.png) | [article.md](04-chatgpt-work-gpt56-beginner/article.md) |
 | 4 | Andrew Ambrosino 谈 Codex 与 ChatGPT | 82 | [article.long.png](03-andrew-ambrosino-codex-chatgpt/article.long.png) | [article.md](03-andrew-ambrosino-codex-chatgpt/article.md) |
 | 5 | Michael Kratsios 白宫 AI 策略 | 79 | [article.long.png](01-michael-kratsios-white-house-ai/article.long.png) | [article.md](01-michael-kratsios-white-house-ai/article.md) |
+
+## 版本记录
+
+| 序号 | 测试结果 | 生成说明 | 完整长图 | 文章稿 |
+| --- | --- | --- | --- | --- |
+| 06 | 陶哲轩谈 AI 与科学的核心悖论 | 使用当前用户版 Skill 生成；对应开头结构已调整为“3 条金句 + 具体场景/冲突导入”。暂无独立评分。 | [article.long.png](06-terence-tao-ai-science/article.long.png) | [article.md](06-terence-tao-ai-science/article.md) |
 
 ## 效果预览
 
@@ -68,8 +74,11 @@
       <sub>独立评分：79</sub>
     </td>
     <td width="33%" valign="top" align="center">
-      <strong>后续测试</strong><br><br>
-      每次使用原文或同源资料进行独立测试后，按同样结构新增 case，并在本页追加评分与预览入口。
+      <strong>陶哲轩谈 AI 与科学的核心悖论</strong><br><br>
+      <a href="06-terence-tao-ai-science/article.long.png">
+        <img src="06-terence-tao-ai-science/preview.jpg" alt="陶哲轩谈 AI 与科学的核心悖论长图预览" width="260">
+      </a><br>
+      <sub>第 6 个测试结果，暂无独立评分</sub>
     </td>
   </tr>
 </table>
