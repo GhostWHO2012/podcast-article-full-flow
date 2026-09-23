@@ -6,7 +6,7 @@
 
 ## 记录范围
 
-本页当前记录 6 个测试样本。每个样本保留：
+本页当前记录 7 个测试样本。每个样本保留：
 
 - `article.md`：测试组生成的文章稿；
 - `article.long.png`：测试组生成的完整公众号长图；
@@ -31,6 +31,7 @@
 | 序号 | 测试结果 | 生成说明 | 完整长图 | 文章稿 |
 | --- | --- | --- | --- | --- |
 | 06 | 陶哲轩谈 AI 与科学的核心悖论 | 使用当前用户版 Skill 生成；对应开头结构已调整为“3 条金句 + 具体场景/冲突导入”。暂无独立评分。 | [article.long.png](06-terence-tao-ai-science/article.long.png) | [article.md](06-terence-tao-ai-science/article.md) |
+| 07 | Opus 5 对写作者来说值得升级吗？ | 使用当前用户版 Skill 生成；已完成双盲对比实验输入与读取，独立评分窗口在最终输出时中断，评分待补。 | [article.long.png](07-opus5-writers/article.long.png) | [article.md](07-opus5-writers/article.md) |
 
 ## 效果预览
 
@@ -79,6 +80,15 @@
         <img src="06-terence-tao-ai-science/preview.jpg" alt="陶哲轩谈 AI 与科学的核心悖论长图预览" width="260">
       </a><br>
       <sub>第 6 个测试结果，暂无独立评分</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top" align="center">
+      <strong>Opus 5 对写作者来说值得升级吗？</strong><br><br>
+      <a href="07-opus5-writers/article.long.png">
+        <img src="07-opus5-writers/preview.jpg" alt="Opus 5 对写作者来说值得升级吗长图预览" width="260">
+      </a><br>
+      <sub>第 7 个测试结果，双盲评分待补</sub>
     </td>
   </tr>
 </table>

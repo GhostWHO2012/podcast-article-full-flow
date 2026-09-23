@@ -110,6 +110,9 @@ Turn subtitles into editorial judgment:
 - Convert repeated spoken fragments into one clean Chinese claim, then support it with the best example from the transcript.
 - When the source is process-heavy, group steps by the reader's decision points, not by every chronological action.
 - When the source is lifestyle, founder story, sales, marketing, product, or AI workflow, preserve the practical tension rather than forcing it into a generic technology-summary frame.
+- Tie each important judgment to at least one source-grounded evidence item: an original statement, output excerpt, number, named example, test condition, or nearby screenshot.
+- Before finalizing claims about price, model version, test setup, sample size, performance difference, or overall conclusion, check each item against the supplied materials. If it cannot be verified, label it as an impression or inference, or remove it.
+- Compress repeated judgments. When two sections make the same point, merge them and preserve the more concrete evidence. Prefer decision-useful distinctions such as what the subject is good for, what it is not good for, and when the trade-off matters.
 
 Opening pattern for finished public-account drafts:
 
@@ -209,6 +212,9 @@ Before delivering:
 - The opening quotes are grounded in the source.
 - The article is thematic rather than chronological.
 - Each section has one main point and concrete support.
+- Each major conclusion has a nearby source-grounded example, number, quote, output excerpt, test condition, or screenshot.
+- Price, model/version names, test conditions, sample sizes, and comparative claims have been checked against the supplied materials; uncertain details are marked as inference or omitted.
+- Repeated conclusions have been merged or shortened so the article preserves evidence density instead of adding explanatory bulk.
 - Host questions are not copied as interview script.
 - Screenshots, if used, each have a reason and a caption.
 - If a long image was requested and screenshots/video were available, the PNG contains embedded video screenshots, not just text.

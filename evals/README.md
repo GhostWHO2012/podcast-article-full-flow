@@ -29,4 +29,5 @@
 | 文件 | 说明 |
 | --- | --- |
 | `2026-09-07-long-image-independent-review.md` | 内容生成测试版 5 张公众号长图的独立窗口重评。 |
-| `long-image-test-results/README.md` | 测试组长图结果、文章稿和顶部预览入口；当前包含 6 个测试结果。 |
+| `2026-09-23-opus5-writers-double-blind.md` | Opus 5 写作文章的双盲对比实验；材料 A 68 分，材料 B 84 分，并已写回 3 条用户版 Skill 规则。 |
+| `long-image-test-results/README.md` | 测试组长图结果、文章稿和顶部预览入口；当前包含 7 个测试结果。 |
