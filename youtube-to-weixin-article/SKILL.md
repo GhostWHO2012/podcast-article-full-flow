@@ -1,6 +1,6 @@
 ---
 name: youtube-to-weixin-article
-description: Use when turning YouTube, podcast, interview, webinar, or talk video material into a Chinese WeChat-style technology article or publish-ready long image, especially with subtitles, bilingual SRT, transcript, video screenshots, article screenshots, or requests about title writing, article structure, quote selection, screenshot placement, WeChat long PNG, or 公众号长图.
+description: Use when turning YouTube, podcast, interview, webinar, or talk video material into a source-grounded Chinese WeChat-style deep article and publish-ready long image, using subtitles or transcripts, evidence-linked claims, curated video screenshots, title and structure decisions, and 公众号长图 output.
 ---
 
 # YouTube To Weixin Article
@@ -92,6 +92,13 @@ Restructure the transcript around ideas, not chronology:
 4. Compress host questions into context.
 5. Prioritize guest judgments, concrete cases, named products, numbers, comparisons, and process details.
 6. Convert English speech into clean Chinese editorial prose while preserving factual meaning.
+7. Preserve specific story details such as being stuck, uncertainty, failure, waiting, misjudgment, cost, and user response when they are present in the source.
+
+Opening density checkpoint:
+
+- The first 100 to 150 Chinese characters after the three quotes should establish the subject, core question, main conclusion, and reader benefit.
+- Start with a concrete scene, conflict, failed attempt, waiting moment, cost, or real feedback when the source provides one.
+- Do not spend the opening on a generic video summary, channel introduction, or biography.
 
 Section titles should read like conclusions:
 
@@ -140,6 +147,8 @@ Choose three opening quotes before drafting the article. A quote is strong when 
 
 Quotes may be lightly polished into natural Chinese, but do not change the claim. Do not invent aphorisms that are unsupported by the transcript.
 
+After the three quotes, open with a specific source-grounded scene or conflict. The opening should make the reader see what happened before explaining the broader idea.
+
 ## Screenshot Placement
 
 Screenshots should prove, clarify, or humanize. They are not decoration.
@@ -156,6 +165,12 @@ Priority order:
 Use screenshots sparsely, commonly 3 to 5 for a long article. A screenshot belongs near the paragraph it supports. Add a concise caption explaining what the reader should notice. Do not distribute screenshots evenly just to make the article look illustrated; place them where they prove or clarify a concrete scene, product surface, interface, workflow, real user feedback, or other evidence in the adjacent text.
 
 Avoid repeated talking-head frames, blurry unreadable charts, screenshots unrelated to nearby text, and images inserted just to fill space.
+
+Phone-width visual check:
+
+- Preview each selected screenshot at a narrow phone-like width before delivery.
+- If text or interface evidence cannot be read, crop closer to the relevant area, choose a clearer frame, add a legible local enlargement, or omit the screenshot.
+- Captions must say exactly what evidence the reader should notice; do not use generic captions such as “视频截图”.
 
 If the source directory contains screenshot files, reuse or curate them. If `images/` is empty but the directory contains `原文长图.png`, inspect the reference long image for where visuals were used before deciding that screenshots are unavailable. If it contains a video file but no screenshots, extract candidate frames from the video around evidence, demo, quote-card, life/work scene, gesture, or strong-expression moments. If neither screenshots nor video are available, mark the missing screenshots explicitly in the deliverable note and use `[截图建议：...]` placeholders in the Markdown.
 
@@ -210,13 +225,16 @@ Before delivering:
 
 - The title contains a clear reader-facing hook.
 - The opening quotes are grounded in the source.
+- The opening moves from three quotes into a concrete scene or conflict and establishes the reader's question and benefit within roughly 100 to 150 Chinese characters.
 - The article is thematic rather than chronological.
 - Each section has one main point and concrete support.
 - Each major conclusion has a nearby source-grounded example, number, quote, output excerpt, test condition, or screenshot.
 - Price, model/version names, test conditions, sample sizes, and comparative claims have been checked against the supplied materials; uncertain details are marked as inference or omitted.
 - Repeated conclusions have been merged or shortened so the article preserves evidence density instead of adding explanatory bulk.
+- Important judgments retain specific source details such as failure, uncertainty, waiting, misjudgment, cost, or user feedback when available.
 - Host questions are not copied as interview script.
 - Screenshots, if used, each have a reason and a caption.
+- Selected screenshots remain readable at phone width, and captions identify the evidence to observe.
 - If a long image was requested and screenshots/video were available, the PNG contains embedded video screenshots, not just text.
 - If a long image was requested, a PNG exists and has been visually checked.
 - Long-image text stays inside the page and inside any quote/card container; font size is readable and not cramped.

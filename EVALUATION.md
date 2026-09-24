@@ -131,6 +131,7 @@
 完整独立评分记录见：
 
 - [`evals/2026-09-07-long-image-independent-review.md`](evals/2026-09-07-long-image-independent-review.md)
+- [`evals/2026-09-23-opus5-writers-blind-comparison.md`](evals/2026-09-23-opus5-writers-blind-comparison.md)
 
 下面保留当前记录摘要，方便在评分流程文档中直接查看。
 

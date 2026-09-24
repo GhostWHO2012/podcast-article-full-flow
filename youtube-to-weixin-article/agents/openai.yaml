@@ -1,3 +1,3 @@
 interface:
-  display_name: "YouTube to WeChat Article"
-  short_description: "Turn video materials into Chinese deep WeChat articles and long PNGs"
+  display_name: "访谈转公众号长文与长图"
+  short_description: "根据视频、字幕和截图生成有证据支撑的中文深度长文与公众号长图"
