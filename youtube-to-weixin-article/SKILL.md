@@ -49,7 +49,7 @@ Use paragraph prose by default. Avoid Q&A transcript style, timestamp headings, 
 
 Target article density: common finished drafts are about 4,000 to 5,500 Chinese characters, even when the subtitle file is much longer. Do not scale article length linearly with transcript length. For very long videos, compress harder by keeping only the claims, examples, numbers, and process steps that change the reader's understanding or action.
 
-Public attribution rule: never show local filenames, local paths, downloaded MP4 names, or SRT filenames as the visible source in the article or long-image footer. Local files are evidence for the writer, not reader-facing attribution. Use the original YouTube/video URL from `youtube链接.txt`, `article.md`, metadata, or the user's provided link; include public title, channel, and guest when known. If no public URL is known, write a short source note such as `来源：用户提供的视频和字幕资料` instead of exposing file names.
+Public attribution rule: never show local filenames, local paths, downloaded MP4 names, or SRT filenames as the visible source in the article or long-image footer. Local files are evidence for the writer, not reader-facing attribution. Use the original YouTube/video URL from `youtube链接.txt`, source metadata, subtitles, the user's provided link, or a verified lookup from the original video title; include public title, channel, and guest when known. If a source draft contains a `mp.weixin.qq.com` article link, treat it as a reference article link, not as the video source. Do not use a WeChat public-account link as the final visible source when the original YouTube/video link can be identified. If no public video URL is known, write a short source note such as `来源：用户提供的视频和字幕资料` instead of exposing file names.
 
 ## Title Pattern
 
@@ -239,7 +239,7 @@ Before delivering:
 - If a long image was requested, a PNG exists and has been visually checked.
 - Long-image text stays inside the page and inside any quote/card container; font size is readable and not cramped.
 - `写在最后` gives an actionable synthesis rather than a recap.
-- Source title, channel, guest, and URL are included when available; no local file names or paths appear as reader-facing source text.
+- Source title, channel, guest, and the original YouTube/video URL are included when available; no local file names, local paths, downloaded article links, MP4 names, or SRT names appear as reader-facing source text.
 - No claim is invented beyond the provided materials.
 
 ## Prompt Skeleton
